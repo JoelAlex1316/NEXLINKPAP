@@ -1,7 +1,3 @@
-document.querySelector('.save-contact').addEventListener('click', () => {
-    alert('Contact saved to your device!');
-});
-
 document.getElementById("saveContact").addEventListener("click", () => {
     // Contact information
     const contactInfo = {
@@ -10,7 +6,7 @@ document.getElementById("saveContact").addEventListener("click", () => {
         address: "Addis Ababa, Ethiopia",
         phone: "+251932184139",
         email: "taffajonny@gmail.com",
-        website: "https://www.nexgentechnologieset.com"
+        website: "https://nexgentechnologieset.com"
     };
 
     // Generate vCard content
@@ -34,3 +30,20 @@ END:VCARD`;
     a.download = `${contactInfo.name.replace(/\s+/g, "_")}_Contact.vcf`;
     a.click();
 });
+
+
+function createMusicParticles() {
+    const particleContainer = document.querySelector('.music-particles');
+    const numParticles = 5; // Number of particles
+
+    for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('music-particle');
+        particle.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+        particle.style.animationDuration = `${Math.random() * 8 + 5}s`; // Random animation speed
+        particle.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+        particleContainer.appendChild(particle);
+    }
+}
+
+createMusicParticles();
